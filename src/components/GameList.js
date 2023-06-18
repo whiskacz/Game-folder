@@ -1,7 +1,15 @@
 import GameShow from './GameShow'
+    
 
+function GameList ( { games }) {
 
-function GameList () {
-    return <div>GameList</div>
-}
+    const renederedGames = games.map((game) => {
+        return <GameShow key={game.id} game={game} />
+    })
+
+    return ( 
+    <div className='games-list'>
+        <div>{renederedGames}</div>
+    </div>
+)}
 export default GameList
